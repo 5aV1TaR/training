@@ -67,7 +67,7 @@ namespace SnakeGame
             isGamePaused = false;
             foodAlpha = 255;
             foodAlphaInc = -25;
-            points = 0;
+            points = 0; //
             foodEaten = 0;
             TimerGameLoop.Start();
             TimerFoodBlink.Start();
