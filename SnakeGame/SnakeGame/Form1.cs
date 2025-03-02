@@ -54,7 +54,7 @@ namespace SnakeGame
 
         private void FrmSnakeGame_Load(object sender, EventArgs e)
         {
-            DoubleBuffered = true;
+            DoubleBuffered = true;//
             BackColor = Color.Black;
             StartGame();
         }
