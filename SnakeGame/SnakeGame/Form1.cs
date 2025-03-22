@@ -101,6 +101,33 @@ namespace SnakeGame
             DrawGrid(g);
             DrawFood(g);
             DrawSnake(g);
+            DrawStatsAndKeyboardHints(g);
+        }
+
+
+        private void DrawStatsAndKeyboardHints(Graphics g)
+        {
+            Font fontStats = new Font("Consolas", 14);
+            int statsLeftOffset = FIELD_LEFT_OFFSET_PIXELS + CELL_SIZE_PIXELS * COLS_NUMBER + 10;
+            g.DrawString(string.Format("Длина змейки: {0}", snake.Count), fontStats, Brushes.Lime, new Point(statsLeftOffset, 10));
+            g.DrawString(string.Format("Скорость: {0}", INITIAL_SNAKE_SPEED_INTERVAL - TimerGameLoop.Interval + 5), fontStats, Brushes.Lime, new Point(statsLeftOffset, 30));
+            g.DrawString(string.Format("Очки: {0}", points), fontStats, Brushes.Goldenrod, new Point(statsLeftOffset, 50));
+            g.DrawString(string.Format("Еды съедено: {0}", foodEaten), fontStats, Brushes.Crimson, new Point(statsLeftOffset, 70));
+
+            g.DrawString("Управление:", fontStats, Brushes.White, new Point(statsLeftOffset, 160));
+            g.DrawString("Вверх: ↑ или W", fontStats, Brushes.White, new Point(statsLeftOffset, 190));
+            g.DrawString("Вниз:  ↓ или S", fontStats, Brushes.White, new Point(statsLeftOffset, 210));
+            g.DrawString("Влево: ← или A", fontStats, Brushes.White, new Point(statsLeftOffset, 230));
+            g.DrawString("Влево: → или D", fontStats, Brushes.White, new Point(statsLeftOffset, 250));
+            g.DrawString("Пауза: [Space]", fontStats, Brushes.White, new Point(statsLeftOffset, 270));
+            g.DrawString("Старт: [Space]", fontStats, Brushes.White, new Point(statsLeftOffset, 290));
+            g.DrawString("Выход: [Escape]", fontStats, Brushes.White, new Point(statsLeftOffset, 310));
+
+            if (isGamePaused)
+            {
+                g.DrawString("Игра на паузе...", fontStats, Brushes.Yellow, new Point(statsLeftOffset, 350));
+            }
+            fontStats.Dispose();
         }
 
         private void DrawGrid(Graphics g)
