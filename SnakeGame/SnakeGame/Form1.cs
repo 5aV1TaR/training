@@ -297,6 +297,21 @@ namespace SnakeGame
 
             snake.AddFirst(newHead);
 
+            if (newHead.X == food.X && newHead.Y == food.Y)
+            {
+                // съели еду, вознаграждаем игрока очками
+                AddPlayerPoints();
+
+                // увеличиваем счётчик съеденной еды
+                foodEaten++;
+
+                // генерируем новую еду на поле
+                GenerateFood();
+            }
+            else
+            {
+                snake.RemoveLast();
+            }
         }
 
         private bool IsGameOver()
@@ -337,24 +352,9 @@ namespace SnakeGame
             }
         }
 
-
-
-
-
         private void AddPlayerPoints() //Начисляемые очки
         {
-            if (food.X == 0 && food.Y == 0 || food.X == ROWS_NUMBER - 1 && food.Y == 0 || food.X == ROWS_NUMBER - 1 && food.Y == COLS_NUMBER - 1 || food.X == 0 && food.Y == COLS_NUMBER - 1)
-            {
-                points += 1000;
-            }
-            else if (food.X == 0 || food.X == ROWS_NUMBER - 1 || food.Y == 0 || food.Y == COLS_NUMBER - 1)
-            {
-                points += 500;
-            }
-            else
-            {
-                points += 250;
-            }
+            points += 250;  
         }
 
         private void TimerFoodBlink_Tick(object sender, EventArgs e)
@@ -371,7 +371,21 @@ namespace SnakeGame
             Invalidate();
         }
 
-
+        private void PauseOrUnpauseGame()
+        {
+            if (!isGamePaused)
+            {
+                TimerGameLoop.Stop();
+                TimerFoodBlink.Stop();
+                Invalidate();
+            }
+            else
+            {
+                TimerGameLoop.Start();
+                TimerFoodBlink.Start();
+            }
+            isGamePaused = !isGamePaused;
+        }
 
         private void FrmSnakeGame_KeyDown(object sender, KeyEventArgs e)
         {
@@ -411,7 +425,22 @@ namespace SnakeGame
                 case Keys.Up:
                 case Keys.W:
                     ChangeSnakeDirection(SnakeDirection.Down, SnakeDirection.Up);
-                    break;                
+                    break;
+                case Keys.Escape:
+                    TimerGameLoop.Stop();
+                    TimerFoodBlink.Stop();  // Перед выходом из игры также остановить таймер мерцания "Еды"
+                    Close();
+                    break;
+                case Keys.Space:
+                    if (isGameEnded && !TimerGameLoop.Enabled)
+                    {
+                        StartGame();
+                    }
+                    else
+                    {
+                        PauseOrUnpauseGame();   // Поставить игру на паузу или снять с паузы
+                    }
+                    break;
             }
         }
     }

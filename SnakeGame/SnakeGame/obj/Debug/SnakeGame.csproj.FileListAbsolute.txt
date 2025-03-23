@@ -8,3 +8,13 @@ C:\Users\x696X\source\repos\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csproj.Gener
 C:\Users\x696X\source\repos\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csproj.CoreCompileInputs.cache
 C:\Users\x696X\source\repos\SnakeGame\SnakeGame\obj\Debug\SnakeGame.exe
 C:\Users\x696X\source\repos\SnakeGame\SnakeGame\obj\Debug\SnakeGame.pdb
+C:\Users\x696X\source\repos\5aV1TaR\training\SnakeGame\SnakeGame\bin\Debug\SnakeGame.exe.config
+C:\Users\x696X\source\repos\5aV1TaR\training\SnakeGame\SnakeGame\bin\Debug\SnakeGame.exe
+C:\Users\x696X\source\repos\5aV1TaR\training\SnakeGame\SnakeGame\bin\Debug\SnakeGame.pdb
+C:\Users\x696X\source\repos\5aV1TaR\training\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csproj.AssemblyReference.cache
+C:\Users\x696X\source\repos\5aV1TaR\training\SnakeGame\SnakeGame\obj\Debug\SnakeGame.FrmSnakeGame.resources
+C:\Users\x696X\source\repos\5aV1TaR\training\SnakeGame\SnakeGame\obj\Debug\SnakeGame.Properties.Resources.resources
+C:\Users\x696X\source\repos\5aV1TaR\training\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csproj.GenerateResource.cache
+C:\Users\x696X\source\repos\5aV1TaR\training\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csproj.CoreCompileInputs.cache
+C:\Users\x696X\source\repos\5aV1TaR\training\SnakeGame\SnakeGame\obj\Debug\SnakeGame.exe
+C:\Users\x696X\source\repos\5aV1TaR\training\SnakeGame\SnakeGame\obj\Debug\SnakeGame.pdb
