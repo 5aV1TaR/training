@@ -1,6 +1,6 @@
 ﻿namespace SnakeGame
 {
-    partial class TicTacToe1
+    partial class frmTicTacToe
     {
         /// <summary>
         /// Required designer variable.
@@ -107,6 +107,8 @@
             this.labelNewGame.TabIndex = 0;
             this.labelNewGame.Text = "Новая игра";
             this.labelNewGame.Click += new System.EventHandler(this.labelNewGame_Click);
+            this.labelNewGame.MouseEnter += new System.EventHandler(this.labelNewGame_MouseEnter);
+            this.labelNewGame.MouseLeave += new System.EventHandler(this.labelNewGame_MouseLeave);
             // 
             // panelNewGame
             // 
@@ -117,6 +119,8 @@
             this.panelNewGame.Size = new System.Drawing.Size(98, 38);
             this.panelNewGame.TabIndex = 32;
             this.panelNewGame.Click += new System.EventHandler(this.panelNewGame_Click);
+            this.panelNewGame.MouseEnter += new System.EventHandler(this.panelNewGame_MouseEnter);
+            this.panelNewGame.MouseLeave += new System.EventHandler(this.panelNewGame_MouseLeave);
             // 
             // labelReset
             // 
@@ -129,6 +133,8 @@
             this.labelReset.TabIndex = 0;
             this.labelReset.Text = "Сброс";
             this.labelReset.Click += new System.EventHandler(this.labelReset_Click);
+            this.labelReset.MouseEnter += new System.EventHandler(this.labelReset_MouseEnter);
+            this.labelReset.MouseLeave += new System.EventHandler(this.labelReset_MouseLeave);
             // 
             // panelPlayerVsPlayer
             // 
@@ -151,6 +157,8 @@
             this.panelReset.Size = new System.Drawing.Size(61, 38);
             this.panelReset.TabIndex = 30;
             this.panelReset.Click += new System.EventHandler(this.panelReset_Click);
+            this.panelReset.MouseEnter += new System.EventHandler(this.panelReset_MouseEnter);
+            this.panelReset.MouseLeave += new System.EventHandler(this.panelReset_MouseLeave);
             // 
             // labelWhooseTurn
             // 
@@ -328,7 +336,7 @@
             this.panelCell0_0.MouseEnter += new System.EventHandler(this.panelCell0_0_MouseEnter);
             this.panelCell0_0.MouseLeave += new System.EventHandler(this.panelCell0_0_MouseLeave);
             // 
-            // TicTacToe1
+            // frmTicTacToe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -354,7 +362,7 @@
             this.Controls.Add(this.panelCell1_0);
             this.Controls.Add(this.panelCell0_1);
             this.Controls.Add(this.panelCell0_0);
-            this.Name = "TicTacToe1";
+            this.Name = "frmTicTacToe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Крестики Нолики";
             this.panelPlayerVsCpu.ResumeLayout(false);

@@ -9,3 +9,15 @@ C:\Users\x696X\source\repos\Games\Games\obj\Debug\Games.csproj.CoreCompileInputs
 C:\Users\x696X\source\repos\Games\Games\obj\Debug\Games.exe
 C:\Users\x696X\source\repos\Games\Games\obj\Debug\Games.pdb
 C:\Users\x696X\source\repos\Games\Games\obj\Debug\SnakeGame.TicTacToe1.resources
+C:\Users\x696X\source\repos\training\Games\Games\bin\Debug\Games.exe.config
+C:\Users\x696X\source\repos\training\Games\Games\bin\Debug\Games.exe
+C:\Users\x696X\source\repos\training\Games\Games\bin\Debug\Games.pdb
+C:\Users\x696X\source\repos\training\Games\Games\obj\Debug\Games.csproj.AssemblyReference.cache
+C:\Users\x696X\source\repos\training\Games\Games\obj\Debug\Games.Menu.resources
+C:\Users\x696X\source\repos\training\Games\Games\obj\Debug\SnakeGame.FrmSnakeGame.resources
+C:\Users\x696X\source\repos\training\Games\Games\obj\Debug\Games.Properties.Resources.resources
+C:\Users\x696X\source\repos\training\Games\Games\obj\Debug\Games.csproj.GenerateResource.cache
+C:\Users\x696X\source\repos\training\Games\Games\obj\Debug\Games.csproj.CoreCompileInputs.cache
+C:\Users\x696X\source\repos\training\Games\Games\obj\Debug\Games.exe
+C:\Users\x696X\source\repos\training\Games\Games\obj\Debug\Games.pdb
+C:\Users\x696X\source\repos\training\Games\Games\obj\Debug\SnakeGame.frmTicTacToe.resources

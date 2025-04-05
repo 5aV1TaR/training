@@ -1,41 +1,42 @@
 ﻿using System;
 using System.Drawing;
+using System.Security.Policy;
 
 namespace TicTacToe
 {
     internal class GameEngine
     {
-        internal enum GameMode
+        internal enum GameMode // Режим игры
         {
             None,
             PlayerVsPlayer,
             PlayerVsCPU
         }
 
-        internal enum WhooseTurn
+        internal enum WhooseTurn // Индикатор текущего хода
         {
             Player1Human,
             Player2Human,
             Player2CPU
         }
 
-        private GameMode Mode { get; set; } = GameMode.None;
-        
-        private WhooseTurn Turn { get; set; } = WhooseTurn.Player1Human;
-        
-        private string Winner { get; set; } = "";
-        
-        private int player1Score = 0; //константа очков первого игрока
+        private GameMode Mode { get; set; } = GameMode.None; // Первичное значение режима игры
 
-        private int player2Score = 0; //константа очков второго игрока
+        private WhooseTurn Turn { get; set; } = WhooseTurn.Player1Human; // Первичное значение того, кто сейчас ходит 
+
+        private string Winner { get; set; } = ""; 
+        
+        private int player1Score = 0; // Константа очков первого игрока
+
+        private int player2Score = 0; // Константа очков второго игрока
 
         private int numberOfDraws = 0;
         
-        const char EMPTY_CELL = '-'; //константа очистки полей
+        const char EMPTY_CELL = '-'; // Константа незаполненного поля
         
-        const char X_MARK = 'X'; //константа заполнения x первого игрока
+        const char X_MARK = 'X'; // Константа заполнения x поля 
 
-        const char O_MARK = 'O'; //константа заполнения y первого игрока
+        const char O_MARK = 'O'; // Константа заполнения y поля
 
         public const string PLAYER_HUMAN_TITLE = "Игрок";
         public const string PLAYER_CPU_TITLE = "Компьютер";
@@ -44,6 +45,17 @@ namespace TicTacToe
             new char[] { EMPTY_CELL, EMPTY_CELL, EMPTY_CELL },
             new char[] { EMPTY_CELL, EMPTY_CELL, EMPTY_CELL }
         };
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        // GetCurrentMode() - возвращает значение текущего режима игры, хранящейся в поле Mode
+        // IsGameStarted() - возвращает true, если игра началась, т.е.значение Mode не равно GameMode.None
+        // GetCurrentTurn() - возвращает текущее значение хода Turn для одного из игроков
+        // GetWinner() - возвращает строку, содержащую имя игрока-победителя в игре
+        // IsPlayer1HumanTurn() - возвращает true, если сейчас ход 1го игрока-человека
+        // SetPlayer1HumanTurn() - устанавливает значение текущего хода Turn в значение WhooseTurn.Player1Human, т.е.ход передаётся 1-му игроку
+        // ResetScore() - сбрасывает счёт обоих игроков в 0, а также обнуляет счётчик игр, сыгранных вничью
+        // PrepareForNewGame() - сбрасывает все счётчики, а также устанавливает значение режима игры в GameMode.None.Подготавливает движок к новой игре.
 
         public GameMode GetCurrentMode()
         {
@@ -75,7 +87,6 @@ namespace TicTacToe
             Turn = WhooseTurn.Player1Human;
         }
 
-        //Сброс очков игроков
         public void ResetScore()
         {
             player1Score = 0;
@@ -89,6 +100,9 @@ namespace TicTacToe
             ResetScore(); 
         }
 
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        // Запуск игры
         public void StartGame(GameMode gameMode)
         {
             if (gameMode == GameMode.None)
@@ -102,6 +116,9 @@ namespace TicTacToe
             Turn = WhooseTurn.Player1Human;
         }
 
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        //
         public string GetCurrentPlayer1Title()
         {
             switch (Mode)
@@ -126,6 +143,8 @@ namespace TicTacToe
             return "";
         }
 
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public string GetCurrentMarkLabelText()
         {
             if (IsPlayer1HumanTurn())
@@ -137,6 +156,8 @@ namespace TicTacToe
                 return O_MARK.ToString();
             }
         }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public Color GetCurrentMarkLabelColor()
         {
@@ -160,7 +181,7 @@ namespace TicTacToe
             return player2Score;
         }
 
-
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Возвращает строку с именем игрока, чей ход в данный момент
         public string GetWhooseTurnTitle()
         {
@@ -200,6 +221,9 @@ namespace TicTacToe
             }
         }
 
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+       
+        //
         public void MakeTurnAndFillGameFieldCell(int row, int column)
         {
             if (IsPlayer1HumanTurn())

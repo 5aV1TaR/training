@@ -430,6 +430,10 @@ namespace SnakeGame
                     TimerGameLoop.Stop();
                     TimerFoodBlink.Stop();  // Перед выходом из игры также остановить таймер мерцания "Еды"
                     Close();
+
+                    Form Menu = Application.OpenForms[0];
+                    Menu.Show();
+
                     break;
                 case Keys.Space:
                     if (isGameEnded && !TimerGameLoop.Enabled)

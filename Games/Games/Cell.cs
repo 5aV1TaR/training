@@ -8,10 +8,10 @@ namespace TicTacToe
 {
     internal class Cell
     {
-        public int Row { get; set; } //
-        public int Column { get; set; } //
+        public int Row { get; set; } 
+        public int Column { get; set; } 
 
-        private Cell(int row, int column) //
+        private Cell(int row, int column) 
         {
             Row = row;
             Column = column;
@@ -19,22 +19,22 @@ namespace TicTacToe
 
         public static Cell From(int row, int column)
         {
-            return new Cell(row, column); //
+            return new Cell(row, column); 
         }
 
         public static Cell ErrorCell()
         {
-            return new Cell(-1, -1); //
+            return new Cell(-1, -1); 
         }
 
         public bool IsErrorCell()
         {
-            return Row == -1 && Column == -1; //
+            return Row == -1 && Column == -1; 
         }
 
         public bool IsValidGameFieldCell()
         {
-            return Row >= 0 && Row <= 2 && Column >= 0 && Column <= 2; //
+            return Row >= 0 && Row <= 2 && Column >= 0 && Column <= 2; 
         }
     }
 }

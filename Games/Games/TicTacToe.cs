@@ -11,11 +11,11 @@ using TicTacToe;
 
 namespace SnakeGame
 {
-    public partial class TicTacToe1 : Form
+    public partial class frmTicTacToe : Form
     {
         private GameEngine engine = new GameEngine(); //подключение класса
 
-        public TicTacToe1()
+        public frmTicTacToe()
         {
             InitializeComponent();
         }
@@ -206,6 +206,8 @@ namespace SnakeGame
         {
             ShowMainMenu(false);
 
+            //устанавливаем местоположение меток с именами игроков, счётом каждого игрока, индикатора хода и кнопок "Новая игра" и "Сброс" на форме,
+            //а также вызывает методы ShowMainMenu и SetPlayersLabelsAndScoreVisible 
             labelPlayer1Name.Text = engine.GetCurrentPlayer1Title();
             labelPlayer2Name.Text = engine.GetCurrentPlayer2Title();
             labelWhooseTurn.Text = engine.GetWhooseTurnTitle();
@@ -446,22 +448,22 @@ namespace SnakeGame
 
         private void panelPlayerVsCpu_Click_1(object sender, EventArgs e)
         {
-            StartNewGameInSelectedMode(GameEngine.GameMode.PlayerVsCPU); //Вызываем метод RegularButtonMouseOut для скрытия визуального эффекта
+            StartNewGameInSelectedMode(GameEngine.GameMode.PlayerVsCPU); 
         }
 
         private void panelPlayerVsPlayer_Click_1(object sender, EventArgs e)
         {
-            StartNewGameInSelectedMode(GameEngine.GameMode.PlayerVsPlayer); //Вызываем метод RegularButtonMouseOver для отображения визуального эффекта
+            StartNewGameInSelectedMode(GameEngine.GameMode.PlayerVsPlayer);
         }
 
         private void labelPlayerVsCpu_Click_1(object sender, EventArgs e)
         {
-            StartNewGameInSelectedMode(GameEngine.GameMode.PlayerVsCPU); //Вызываем метод RegularButtonMouseOut для скрытия визуального эффекта
+            StartNewGameInSelectedMode(GameEngine.GameMode.PlayerVsCPU); 
         }
 
         private void labelPlayerVsPlayer_Click_1(object sender, EventArgs e)
         {
-            StartNewGameInSelectedMode(GameEngine.GameMode.PlayerVsPlayer); //Вызываем метод RegularButtonMouseOver для отображения визуального эффекта
+            StartNewGameInSelectedMode(GameEngine.GameMode.PlayerVsPlayer); 
         }
 
         private void panelPlayerVsPlayer_MouseEnter(object sender, EventArgs e)
@@ -477,6 +479,46 @@ namespace SnakeGame
         private void labelPlayerVsPlayer_MouseEnter(object sender, EventArgs e)
         {
             RegularButtonMouseOver(panelPlayerVsPlayer, labelPlayerVsPlayer); //Вызываем метод RegularButtonMouseOut для скрытия визуального эффекта
+        }
+
+        private void panelReset_MouseEnter(object sender, EventArgs e)
+        {
+            RegularButtonMouseOver(panelReset, labelReset);
+        }
+
+        private void panelReset_MouseLeave(object sender, EventArgs e)
+        {
+            RegularButtonMouseOut(panelReset, labelReset);
+        }
+
+        private void labelReset_MouseEnter(object sender, EventArgs e)
+        {
+            RegularButtonMouseOver(panelReset, labelReset);
+        }
+
+        private void labelReset_MouseLeave(object sender, EventArgs e)
+        {
+            RegularButtonMouseOut(panelReset, labelReset);
+        }
+
+        private void panelNewGame_MouseEnter(object sender, EventArgs e)
+        {
+            RegularButtonMouseOver(panelNewGame, labelNewGame);
+        }
+
+        private void panelNewGame_MouseLeave(object sender, EventArgs e)
+        {
+            RegularButtonMouseOut(panelNewGame, labelNewGame);
+        }
+
+        private void labelNewGame_MouseEnter(object sender, EventArgs e)
+        {
+            RegularButtonMouseOver(panelNewGame, labelNewGame);
+        }
+
+        private void labelNewGame_MouseLeave(object sender, EventArgs e)
+        {
+            RegularButtonMouseOut(panelNewGame, labelNewGame);
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
